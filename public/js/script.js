@@ -63,17 +63,22 @@ $(document).ready(function(){
 				if(currentDiv.find("input:text").val() !='')
 				{
 					var inputValue = currentDiv.find("input:text").val();
-					/*First letter uppercase.	
-					inputValue = inputValue.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-    						return letter.toUpperCase();
-							});	
-					*/ 	
 					var selectionId = "#"+$(this).parent().parent().find("select").attr('id');	
 					$(selectionId).append(new Option(inputValue, inputValue.toLowerCase(), true, true));
 				
 					var button = $(this).parent().parent().find('input:first');	
 					$(this).parent().remove();
-					button.val("+");		
+					button.val("+");	
+					
+					$.ajax
+					({
+	  				type: "GET",
+	  				url: "/chichi/public/campagin/inserting",
+	  				cache: false,
+	  				data: "type="+data+"&value="+currentDiv.find("input:text").val(),
+	  				success: function(asdf)
+	  				{}	
+					});
 				}
 			});
 			}
@@ -82,8 +87,6 @@ $(document).ready(function(){
 		});
 	});
 	
-
-
 	//MainMenu
 	var mainMenu ={
 	menuShow: 0,
@@ -100,11 +103,7 @@ $(document).ready(function(){
 	});}
 	};
 
-
-
 	mainMenu.init();	
-
-
 
 //Drag and drop 
 	$(function() {

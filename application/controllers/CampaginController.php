@@ -2,15 +2,26 @@
 class CampaginController extends Zend_Controller_Action
 {
 	private $create;
+	private $data;
 	
 	public function init()
 	{
+		$this->data = new Default_Model_Data();
 		//$this->create = new Default_Model_Create();
 	}
 	
 	public function indexAction()
 	{
 		//$this->_helper->layout->disableLayout();
+	}
+	
+	public function insertingAction()
+	{
+		if($this->getRequest()->isGET())
+		{
+			array_shift($_GET);
+			$this->data->inserting($_GET);
+		}
 	}
 	
 	
