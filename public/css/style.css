@@ -1,0 +1,145 @@
+/*************General Styling*****************/
+#container{
+	background-color:#666;
+	padding:6px;
+	margin:10px;
+	overflow:auto;
+
+	}
+
+#domainManagement,#templateManagement, #test_send{
+background-color:#CCC;
+
+}
+
+
+
+#domain,#ip{
+
+	/*background-color:#999;*/
+	margin-bottom:15px;
+	height:auto;
+	}
+
+
+body{background-color:silver;}
+	
+#tabNav {
+	list-style-type:none;
+	display:inline;
+	margin:0;
+	padding:0;
+	left:0;
+	top:0;
+	}	
+		
+#tabNav li{
+	list-style-type:none;
+	display:inline;
+	background-color:#999;
+	padding:1px 13px;
+	border: 1px solid black;
+	border-radius: 5px;
+
+	}
+
+#tabNav li.current{
+	background-color:#CCC;
+	border-bottom: 0;
+	font-weight:bold;
+	}
+	
+#tabNav li a{
+	text-decoration:none;
+}
+
+#tabNav li a:link,a:visited{
+	color:black;}
+
+select option{ 
+  background-color: #E0E0D1; 
+} 
+
+
+/**********Campaign Management*******/
+#campaign > div{
+	float:left;
+}
+
+
+#campaign table{
+	border:1px solid black;
+	background-color:#C2C2A3;
+}
+
+#campaign table td{padding-right:10px;}
+
+#campaign table label{
+	float:right;
+}
+
+#campaign table select{
+	width:150px;
+}
+
+#campaign table .options input{
+	width:55px;
+}
+
+#listCreatives{
+	margin-left:15px;
+	padding:0 15px 5px 15px;
+	width:400px;
+	height:400px;
+	overflow:auto;
+	background-color:#CCCCB2;
+}
+
+/**********Domain Management*******/
+#domain>div, #ip>div{float:left;}
+#domain, #ip{height:250px;width:400px; padding-left:5px;}
+
+
+
+
+
+#sortable1, #sortable2 { list-style-type: none; margin: 0; padding: 0; margin-right: 20px; background: #eee; padding: 2px; width: 100px; border: 1px solid black; height:100px;overflow:auto;overflow-x:hidden;}
+#sortable1 li, #sortable2 li{ cursor: move; margin: 5px; padding: 2px; font-size: 13px; width: 70px;  background: none; background-color: white;}
+
+
+
+/**********Template Management**************/
+textarea{width:99%; height:300px;}	
+
+/***********Test&Send Management************/
+#templateVolumeTest, #templateSend{
+	clear:both;
+	}
+
+#test_send div{
+border:1px solid black;
+}
+
+#templates{width:300px;}
+
+
+.empty1{clear:both;}
+
+#mainMenu{
+position:fixed;
+top:55px;
+background-color:#952;
+width:120px;
+}
+
+#mainMenu input{
+	width:110px;
+}
+
+#mainMenu p{
+	float:right;
+}
+
+
+
+
