@@ -12,6 +12,8 @@ class CampaginController extends Zend_Controller_Action
 	
 	public function indexAction()
 	{
+		$data = $this->data->display();
+		$this->view->data = $data;
 		//$this->_helper->layout->disableLayout();
 	}
 	

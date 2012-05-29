@@ -22,9 +22,13 @@
 						<td><label>Advertiser</label></td>
 						<td><select id="advertiser">
 								<option>Choose An Advertiser</option>
-								<option value="bestbuy">BestBuy</option>
-								<option value="macys">Macy's</option>
-								<option value="starbuck">Starbucks</option>
+								<?php
+									if(isset($this->data))
+										foreach($this->data as $value)
+											if($value["type"] == "Advertiser")
+												echo '<option>'.$value["value"].'</option>';
+											
+								?>
 								</select></td>
 						</tr>	
 						<tr class="options">
