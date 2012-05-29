@@ -12,11 +12,6 @@ $(document).ready(function(){
 		$('#'+$(this).val()).fadeIn('slow');
 			e.preventDefault();
 	});
-	
-	$('button').click(function(e){
-		alert("saf");
-	});
-
 	//Deployment Tab
 	$('#tabNav a').click(function(e){
 		$('#tabNav li.current').removeClass();
@@ -24,6 +19,10 @@ $(document).ready(function(){
 		$(this).parent().addClass('current');
 		$($(this).attr("href")).fadeIn('slow');
 			e.preventDefault();
+	});
+	
+	$('button').click(function(e){
+		alert("adsf");
 	});
 
 	//Campaign Menu
@@ -51,7 +50,7 @@ $(document).ready(function(){
 	$("#campaign .options").each(function(){
 		$('<td><input class="addElement" type="button" value="+"/></td>').appendTo(this).click(function(){
 			var button = $(this).parent().find('input:first ');
-			
+			var data =  $(this).parent().find('label:first').text();		
 			if(button.val()=="cancel"){
 			 	$(this).next().remove();
 				button.val("+");
@@ -59,23 +58,27 @@ $(document).ready(function(){
 			else{
 			  button.val("cancel");
 			$('<div><input type="text" /><input class="save" type="button" value="save" id="save"></div>').hide().appendTo($(this).parent()).show("slide", { direction: "left" }, 1000).parent().find("input:button").click(function(){
+
 				var currentDiv = $(this).parent();
-				if(currentDiv.find("input:text").val() !=''){
+				if(currentDiv.find("input:text").val() !='')
+				{
 					var inputValue = currentDiv.find("input:text").val();
 					/*First letter uppercase.	
 					inputValue = inputValue.toLowerCase().replace(/\b[a-z]/g, function(letter) {
     						return letter.toUpperCase();
 							});	
 					*/ 	
-						var selectionId = "#"+$(this).parent().parent().find("select").attr('id');	
+					var selectionId = "#"+$(this).parent().parent().find("select").attr('id');	
 					$(selectionId).append(new Option(inputValue, inputValue.toLowerCase(), true, true));
 				
-				var button = $(this).parent().parent().find('input:first');	
-				$(this).parent().remove();
-				button.val("+");		
+					var button = $(this).parent().parent().find('input:first');	
+					$(this).parent().remove();
+					button.val("+");		
 				}
 			});
 			}
+			
+			
 		});
 	});
 	
