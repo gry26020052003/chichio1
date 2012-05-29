@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>E-Mailing</title>
+
+<link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" charset="utf-8"/>
+<script src="./lib/jquery-1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="./lib/script.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+
+</head>
+<body>
+<div id="campaign">	
+	<div id="creatives">
+	<form id="newCreative" method="post" action="">
+	<table>
+		<tr>
+			<td><label>Campaign Name</label></td>
+			<td><input id="campaignName" name="campaignName" type="text" /></td>
+		</tr>			
+		<tr class="options">
+			<td><label>Advertiser</label></td>
+			<td><select id="advertiser">
+				<option>Choose An Advertiser</option>
+				<option value="bestbuy">BestBuy</option>
+				<option value="macys">Macy's</option>
+				<option value="starbuck">Starbucks</option>
+			</select></td>
+		</tr>
+		
+		<tr class="options">
+		<td><label>Ad Network</label></td>
+		<td><select id="network">
+			<option>Choose A Network</option>
+			<option>YourAdPartner</option>
+			<option>AdAffliate</option>
+			<option>Dish</option>
+		</select></td>
+		</tr>
+		
+		<tr class="options">
+		<td><label>Offers</label></td>
+		<td><select id="offers">
+			<option>Choose A Network</option>
+			<option>BestBuy</option>
+			<option>StarBucks</option>
+			<option>Macy's</option>
+		</select></td>
+		</tr>
+		
+		<tr class="options">
+		<td><label>Domains</label></td>
+		<td><select id="domains">
+			<option>Choose A Domain</option>
+			<option>Yahoo</option>
+			<option>Gmail</option>
+		</select></td>
+		</tr>
+		
+		<tr class="options">
+		<td><label>Cluster</label></td>
+		<td><select id="cluster">
+			<option>Choose A Cluster</option>
+			<option>Cat</option>
+			<option>Fish</option>
+		</select></td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td><input id="createCreative" type="button" value="Create Creative"/></td>
+		</tr>		
+	</form>
+	</table>
+</div>
+</body>
+</html>
