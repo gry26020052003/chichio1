@@ -3,10 +3,12 @@ class CampaginController extends Zend_Controller_Action
 {
 	private $create;
 	private $data;
+	private $campaign;
 	
 	public function init()
 	{
 		$this->data = new Default_Model_Data();
+		$this->campaign = new Default_Model_Campaign();
 		//$this->create = new Default_Model_Create();
 	}
 	
@@ -14,7 +16,8 @@ class CampaginController extends Zend_Controller_Action
 	{
 		$data = $this->data->display();
 		$this->view->data = $data;
-		//$this->_helper->layout->disableLayout();
+		$camp = $this->campaign->display();
+		$this->view->camp = $camp;
 	}
 	
 	public function insertingAction()
@@ -25,33 +28,23 @@ class CampaginController extends Zend_Controller_Action
 			$this->data->inserting($_GET);
 		}
 		
-		exit;
 		if($this->getRequest()->isPOST())
 		{
-			echo "asdf";
-			print_r($_POST);
-			return;
-			exit;
+			foreach($_POST as $key => $value)
+				if(strstr($value, "Choose"))
+					unset($_POST[$key]);
+						
+			if(empty($_POST['campaignName']))
+				echo "<script>alert('Please provide a Campagin Name');</script>";
+			else 
+				$this->campaign->inserting($_POST);
+			
 		}
-		
-		
 	}
 	
 	
 	public function getAction()
 	{
-		if($this->getRequest()->isPOST())
-		{
-			foreach($_POST as $key => $value)
-				if(strstr($value, "Choose"))
-			
-			if(empty($_POST['[campaignName]']))
-				echo "<script>alert('Please provide a Campagin Name');</script>";
-			
-			
-			
-			print_r($_POST);
-		}
 	}
 	
 	public function createAction()

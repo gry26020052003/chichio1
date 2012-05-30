@@ -12,7 +12,7 @@
 <div id='container'>
 	<div id="campaign">
 		<div id="creatives">
-			<form id="newCreative" method="post" action='/chichi/public/campagin/get'>
+			<form id="newCreative" method="post" action='/chichi/public/campagin/inserting'>
 				<table>
 					<tr>
 						<td><label>Campaign Name</label></td>
@@ -88,7 +88,12 @@
 		</table>
 	</div>
 <div id="listCreatives">
-	lists
+	<ul>
+		<?php
+			foreach($this->camp as $value)
+				echo "<li><a href=''>".$value["cluster"].$value["campaignName"]."</a></li>";
+		?>
+	</ul>
 </div>	
 </div>
 </body>
