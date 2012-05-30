@@ -12,7 +12,7 @@
 <div id='container'>
 	<div id="campaign">
 		<div id="creatives">
-			<form id="newCreative" method="post" action="">
+			<form id="newCreative" method="post" action='/chichi/public/campagin/get'>
 				<table>
 					<tr>
 						<td><label>Campaign Name</label></td>
@@ -20,66 +20,76 @@
 					</tr>			
 					<tr class="options">
 						<td><label>Advertiser</label></td>
-						<td><select id="advertiser">
+						<td><select id="advertiser" name="advertiser">
 								<option>Choose An Advertiser</option>
 								<?php
 									if(isset($this->data))
 										foreach($this->data as $value)
 											if($value["type"] == "Advertiser")
-												echo '<option>'.$value["value"].'</option>';
-											
+												echo '<option value="'.$value["value"].'">'.$value["value"].'</option>';										
 								?>
 								</select></td>
 						</tr>	
 						<tr class="options">
 							<td><label>Ad Network</label></td>
-							<td><select id="network">
+							<td><select id="network" name="network">
 								<option>Choose A Network</option>
-								<option>YourAdPartner</option>
-								<option>AdAffliate</option>
-							<option>Dish</option>
+								<?php
+									if(isset($this->data))
+										foreach($this->data as $value)
+											if($value["type"] == "Ad Network")
+												echo '<option value="'.$value["value"].'">'.$value["value"].'</option>';										
+								?>
 						</select></td>
 					 </tr>		
 					<tr class="options">
 						<td><label>Offers</label></td>
-						<td><select id="offers">
-						<option>Choose A Network</option>
-						<option>BestBuy</option>
-						<option>StarBucks</option>
-						<option>Macy's</option>
+						<td><select id="offers" name="offers">
+							<option>Choose A Offer</option>
+						<?php
+							if(isset($this->data))
+								foreach($this->data as $value)
+									if($value["type"] == "Offers")
+										echo '<option value="'.$value["value"].'">'.$value["value"].'</option>';										
+						?>
 						</select></td>
 					</tr>
 		
 					<tr class="options">
 						<td><label>Domains</label></td>
-						<td><select id="domains">
+						<td><select id="domains"  name="domains">
 								<option>Choose A Domain</option>
-								<option>Yahoo</option>
-								<option>Gmail</option>
+								<?php
+									if(isset($this->data))
+										foreach($this->data as $value)
+											if($value["type"] == "Domains")
+												echo '<option value="'.$value["value"].'">'.$value["value"].'</option>';										
+								?>
 							</select></td>
 					</tr>
 		
 				<tr class="options">
 					<td><label>Cluster</label></td>
-					<td><select id="cluster">
+					<td><select id="cluster" name="cluster">
 						<option>Choose A Cluster</option>
-						<option>Cat</option>
-						<option>Fish</option>
+							<?php
+									if(isset($this->data))
+										foreach($this->data as $value)
+											if($value["type"] == "Cluster")
+												echo '<option value="'.$value["value"].'">'.$value["value"].'</option>';										
+								?>
 					</select></td>
-				</tr>
-				
+				</tr>	
 				<tr>
 					<td></td>
-					<td><input id="createCreative" type="button" value="Create Creative"/></td>
+					<td><input id="createCreative" type="submit" value="Create Creative"/></td>
 				</tr>
 			</form>
 		</table>
 	</div>
-	
 <div id="listCreatives">
 	lists
 </div>	
- 
 </div>
 </body>
 </html>

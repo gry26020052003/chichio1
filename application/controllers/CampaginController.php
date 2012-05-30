@@ -24,12 +24,34 @@ class CampaginController extends Zend_Controller_Action
 			array_shift($_GET);
 			$this->data->inserting($_GET);
 		}
+		
+		exit;
+		if($this->getRequest()->isPOST())
+		{
+			echo "asdf";
+			print_r($_POST);
+			return;
+			exit;
+		}
+		
+		
 	}
 	
 	
 	public function getAction()
 	{
-		
+		if($this->getRequest()->isPOST())
+		{
+			foreach($_POST as $key => $value)
+				if(strstr($value, "Choose"))
+			
+			if(empty($_POST['[campaignName]']))
+				echo "<script>alert('Please provide a Campagin Name');</script>";
+			
+			
+			
+			print_r($_POST);
+		}
 	}
 	
 	public function createAction()
