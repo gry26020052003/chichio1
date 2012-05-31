@@ -6,7 +6,8 @@ class Default_Model_Campaign extends Zend_Db_Table_Abstract
 	
 	public function display()
 	{
-		$data = $this->fetchAll()->toArray();
+		$select = $this->select()->order("id DESC");
+		$data = $this->fetchAll($select)->toArray();
 		return $data;
 	}
 	

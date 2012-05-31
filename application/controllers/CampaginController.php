@@ -33,11 +33,18 @@ class CampaginController extends Zend_Controller_Action
 			foreach($_POST as $key => $value)
 				if(strstr($value, "Choose"))
 					unset($_POST[$key]);
-						
+								
 			if(empty($_POST['campaignName']))
 				echo "<script>alert('Please provide a Campagin Name');</script>";
-			else 
+			else
+			{ 
+				$today = getdate();
+				$datetime = $today["year"].'-'.$today['mon'].'-'.$today['mday'].' '.$today['hours'].':'.$today['minutes'].':'.$today['seconds'];
+				$_POST['date'] = $datetime;
 				$this->campaign->inserting($_POST);
+				$this->_redirect('/campagin');
+				return;
+			}
 			
 		}
 	}

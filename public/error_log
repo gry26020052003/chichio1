@@ -85,3 +85,4 @@ Stack trace:
 #3 /home7/chichio1/public_html/chichi/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
 #4 /home7/chichio1/public_html/chichi/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
 #5 /home7/chichio1/public_html/chichi/public/index.php(26): Zend_Application->run in /home7/chichio1/public_html/chichi/library/Zend/Controller/Response/Abstract.php on line 323
+[30-May-2012 23:03:31] PHP Fatal error:  Call to a member function select() on a non-object in /home7/chichio1/public_html/chichi--tian/application/models/Campaign.php on line 9
