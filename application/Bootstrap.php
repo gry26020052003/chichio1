@@ -19,7 +19,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap{
 	{
 		$parts = explode("/", $_SERVER['REQUEST_URI']);
 		$realpath ="/".$parts[1]."/public/";
-		define(realpath, $realpath);
+		define('realpath', $realpath);
 	}
 	
 	
