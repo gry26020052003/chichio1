@@ -73,7 +73,7 @@ $(document).ready(function(){
 					$.ajax
 					({
 	  				type: "GET",
-	  				url: "/chichi/public/campagin/inserting",
+	  				url: "./inserting",
 	  				cache: false,
 	  				data: "type="+data+"&value="+currentDiv.find("input:text").val(),
 	  				success: function(asdf)
