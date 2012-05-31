@@ -42,6 +42,8 @@ class CampaginController extends Zend_Controller_Action
 				$datetime = $today["year"].'-'.$today['mon'].'-'.$today['mday'].' '.$today['hours'].':'.$today['minutes'].':'.$today['seconds'];
 				$_POST['date'] = $datetime;
 				$this->campaign->inserting($_POST);
+				$this->_redirect('/campagin');
+				return;
 			}
 			
 		}
