@@ -27,7 +27,6 @@ $(document).ready(function(){
 
 	//Campaign Menu
 	$('#createCreative').click(function(e){
-		
 		var campaignName = ($("#campaignName").val());
 		var advertiser = ($("#advertiser").val());
 		var network = ($("#network").val());
@@ -76,8 +75,11 @@ $(document).ready(function(){
 	  				url: "./campagin/inserting",
 	  				cache: false,
 	  				data: "type="+data+"&value="+currentDiv.find("input:text").val(),
-	  				success: function(asdf)
-	  				{}	
+	  				beforeSend: function(){
+							alert(3);},
+	  				success: function(asdf)	{},
+	  				complete: function(){
+							$('#campaign .saving').fadeOut(1000,function(){$(this).remove();});}	
 					});
 				}
 			});

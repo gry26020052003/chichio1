@@ -62,10 +62,20 @@ select option{
 
 
 /**********Campaign Management*******/
+#campaign{;top:0;left:0;height:450px;position:relative;}
+
 #campaign > div{
 	float:left;
 }
 
+.saving{
+  width:100%;
+  height: 100%;
+	background-color:black;
+  opacity: 0.64;
+  position:absolute;
+  display:block;
+}
 
 #campaign table{
 	border:1px solid black;

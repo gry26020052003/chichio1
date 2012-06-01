@@ -7,7 +7,6 @@ class CampaginController extends Zend_Controller_Action
 	
 	public function init()
 	{
-		echo "welcome";
 		$this->data = new Default_Model_Data();
 		$this->campaign = new Default_Model_Campaign();
 		//$this->create = new Default_Model_Create();
@@ -54,6 +53,7 @@ class CampaginController extends Zend_Controller_Action
 	public function getAction()
 	{
 	}
+	
 	
 	public function createAction()
 	{
