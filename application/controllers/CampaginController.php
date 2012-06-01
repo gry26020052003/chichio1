@@ -20,6 +20,7 @@ class CampaginController extends Zend_Controller_Action
 		$this->view->camp = $camp;
 	}
 	
+	
 	public function insertingAction()
 	{
 		if($this->getRequest()->isGET())
@@ -63,14 +64,14 @@ class CampaginController extends Zend_Controller_Action
 	
 	public function updatingAction()
 	{
-		$this->_helper->layout->disableLayout();
 		if($this->getRequest()->isGET())
-			if($_GET['action'] == "addcreateives")
+			if(isset($_GET['cid']))
 			{
-				$addc = TRUE;
-				$this->view->addc = $addc;
+				$data = $this->campaign->displayByID($_GET['cid']);
+				$this->view->data = $data;
 			}
-		$rows = $this->create->displayAll();
-		$this->view->data = $rows;
+				
+
+
 	}
 }

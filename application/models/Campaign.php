@@ -15,4 +15,10 @@ class Default_Model_Campaign extends Zend_Db_Table_Abstract
 	{
 		$this->insert($data);
 	}
+	
+	public function displaybyID($id)
+	{
+		$data = $this->fetchAll($this->select()->where('id = ?', $id))->toArray();
+		return $data;
+	}
 }
