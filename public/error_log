@@ -86,3 +86,15 @@ Stack trace:
 #4 /home7/chichio1/public_html/chichi/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
 #5 /home7/chichio1/public_html/chichi/public/index.php(26): Zend_Application->run in /home7/chichio1/public_html/chichi/library/Zend/Controller/Response/Abstract.php on line 323
 [30-May-2012 23:03:31] PHP Fatal error:  Call to a member function select() on a non-object in /home7/chichio1/public_html/chichi--tian/application/models/Campaign.php on line 9
+[31-May-2012 22:00:05] PHP Fatal error:  Uncaught exception 'Zend_Controller_Response_Exception' with message 'Cannot send headers; headers already sent in /home7/chichio1/public_html/chichi-tian/application/controllers/CampaginController.php, line 10' in /home7/chichio1/public_html/chichi-tian/library/Zend/Controller/Response/Abstract.php:323
+Stack trace:
+#0 /home7/chichio1/public_html/chichi-tian/library/Zend/Controller/Response/Abstract.php(341): Zend_Controller_Response_Abstract->canSendHeaders(true)
+#1 /home7/chichio1/public_html/chichi-tian/library/Zend/Controller/Response/Abstract.php(768): Zend_Controller_Response_Abstract->sendHeaders()
+#2 /home7/chichio1/public_html/chichi-tian/library/Zend/Controller/Front.php(992): Zend_Controller_Response_Abstract->sendResponse()
+#3 /home7/chichio1/public_html/chichi-tian/library/Zend/Application/Bootstrap/Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#4 /home7/chichio1/public_html/chichi-tian/library/Zend/Application.php(366): Zend_Application_Bootstrap_Bootstrap->run()
+#5 /home7/chichio1/public in /home7/chichio1/public_html/chichi-tian/library/Zend/Controller/Response/Abstract.php on line 323
+[31-May-2012 22:01:46] PHP Fatal error:  Cannot redeclare CampaginController::updatingAction() in /home7/chichio1/public_html/chichi-tian/application/controllers/CampaginController.php on line 68
+[31-May-2012 22:02:46] PHP Fatal error:  Call to a member function displayAll() on a non-object in /home7/chichio1/public_html/chichi-tian/application/controllers/CampaginController.php on line 72
+[31-May-2012 22:02:48] PHP Fatal error:  Call to a member function displayAll() on a non-object in /home7/chichio1/public_html/chichi-tian/application/controllers/CampaginController.php on line 72
+[31-May-2012 22:26:35] PHP Fatal error:  Call to a member function select() on a non-object in /home7/chichio1/public_html/chichi-tian/application/models/Campaign.php on line 21

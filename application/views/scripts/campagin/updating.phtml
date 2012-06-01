@@ -1,0 +1,40 @@
+<?php
+echo '<table width="600px" border="1" style="margin-left:100px;" align="center">';
+foreach($this->data as $value)
+{
+	echo '<tr align="center">
+		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Campagin Name</td>
+		<td>'.$value["campaignName"].'</td>
+	</tr>
+	<tr align="center">
+		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Domain</td>
+		<td>'.$value["campaignName"].'</td>
+	</tr>
+	<tr align="center">
+		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Advertiser</td>
+		<td>'.$value["advertiser"].'</td>
+	</tr>
+	<tr align="center">
+		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Network</td>
+		<td>'.$value["network"].'</td>
+	</tr>
+	<tr align="center">
+		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Domains</td>
+		<td>'.$value["domains"].'</td>
+	</tr>
+	<tr align="center">
+		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Cluster</td>
+		<td>'.$value["cluster"].'</td>
+	</tr>
+	<tr align="center">
+		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Offers</td>
+		<td>'.$value["cluster"].'</td>
+	</tr>
+	<tr align="center">
+		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Date</td>
+		<td>'.$value["date"].'</td>
+	</tr>
+	';
+}
+echo '</table>';
+
