@@ -7,10 +7,6 @@ foreach($this->data as $value)
 		<td>'.$value["campaignName"].'</td>
 	</tr>
 	<tr align="center">
-		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Domain</td>
-		<td>'.$value["campaignName"].'</td>
-	</tr>
-	<tr align="center">
 		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Advertiser</td>
 		<td>'.$value["advertiser"].'</td>
 	</tr>
@@ -28,13 +24,21 @@ foreach($this->data as $value)
 	</tr>
 	<tr align="center">
 		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Offers</td>
-		<td>'.$value["cluster"].'</td>
+		<td>'.$value["offers"].'</td>
 	</tr>
 	<tr align="center">
 		<td bgcolor="E0ffff" style="font-size:14px; font-weight:bold;">Date</td>
 		<td>'.$value["date"].'</td>
-	</tr>
-	';
+	</tr>';
 }
 echo '</table>';
+
+foreach($this->create as $value)
+	echo '<br /><a style="margin-left:100px;" href="" />'.$value["name"].'</a> <br />';
+
+
+echo '<form style="margin-left:100px;"  method="post" action="'.realpath.'campagin/updating?action=addlink&cid='.$value["id"].'"">
+						<input type="hidden" name="campagin_id" value="'.$value["id"].'" />  <br />
+						<input type="text" name="name" /><input type="submit" value="Add Creative" />
+					</form>';
 

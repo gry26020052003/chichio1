@@ -9,6 +9,7 @@ class CampaginController extends Zend_Controller_Action
 	{
 		$this->data = new Default_Model_Data();
 		$this->campaign = new Default_Model_Campaign();
+		$this->create = new Default_Model_Creative();
 		//$this->create = new Default_Model_Create();
 	}
 	
@@ -65,11 +66,27 @@ class CampaginController extends Zend_Controller_Action
 	public function updatingAction()
 	{
 		if($this->getRequest()->isGET())
+		{
 			if(isset($_GET['cid']))
 			{
 				$data = $this->campaign->displayByID($_GET['cid']);
 				$this->view->data = $data;
 			}
+			
+			if(isset($_GET['action']))
+				if($_GET['action'] == "addlink")
+					$this->view->action = "addlink";
+		}
+			
+		if($this->getRequest()->isPOST())
+		{
+			$this->create->inserting($_POST);
+			$this->_redirect($_SERVER['HTTP_REFERER']);
+		}
+		
+		$create_data = $this->create->displaybyID($_GET['cid']);
+		$this->view->create = $create_data;
+
 				
 
 
