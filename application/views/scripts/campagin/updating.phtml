@@ -34,11 +34,12 @@ foreach($this->data as $value)
 echo '</table>';
 
 foreach($this->create as $value)
+{
 	echo '<br /><a style="margin-left:100px;" href="" />'.$value["name"].'</a> <br />';
+}
 
-
-echo '<form style="margin-left:100px;"  method="post" action="'.realpath.'campagin/updating?action=addlink&cid='.$value["id"].'"">
-						<input type="hidden" name="campagin_id" value="'.$value["id"].'" />  <br />
+echo '<form style="margin-left:100px;"  method="post" action="'.realpath.'campagin/updating?action=addlink&cid='.$value["campagin_id"].'"">
+						<input type="hidden" name="campagin_id" value="'.$value["campagin_id"].'" />  <br />
 						<input type="text" name="name" /><input type="submit" value="Add Creative" />
 					</form>';
 
