@@ -26,7 +26,7 @@ class CampaginController extends Zend_Controller_Action
 	{
 		if($this->getRequest()->isGET())
 		{
-			array_shift($_GET);
+			unset($_GET["_"]);
 			$this->data->inserting($_GET);
 		}
 		
