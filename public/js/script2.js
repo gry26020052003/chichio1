@@ -48,7 +48,6 @@ $(document).ready(function(){
 
 	
 	$('#createCreative').click(function(e){
-		
 		var campaignData = {
 			campaignName : "",
 			advertiser : "",
@@ -57,7 +56,6 @@ $(document).ready(function(){
 			domains : "",
 			cluster : ""	
 		}
-		
 		
 for(var key in campaignData){
 	campaignData[key] = ($("#"+key).val());
@@ -81,10 +79,10 @@ for(var key in campaignData){
 	},
 	
 	error: function(xhr, ajaxOptions, thrownError){
-		alert('error');
-		    alert(xhr.responseText);
-		    alert(ajaxOptions);
-                    alert(thrownError);	
+			alert('error');
+			alert(xhr.responseText);
+			alert(ajaxOptions);
+			alert(thrownError);	
 		},
 			
 	success: function(data)
@@ -98,40 +96,48 @@ for(var key in campaignData){
 	})
 });
 
-
-
-
 	$("#campaign .options").each(function(){
 		$('<td><input class="addElement" type="button" value="+"/></td>').appendTo(this).click(function(){
 			var button = $(this).parent().find('input:first ');
-			
+			var data =  $(this).parent().find('label:first').text();		
 			if(button.val()=="cancel"){
 			 	$(this).next().remove();
 				button.val("+");
 			}
 			else{
 			  button.val("cancel");
-			$('<div><input type="text" /><input class="save" type="button" value="save"></div>').hide().appendTo($(this).parent()).show("slide", { direction: "left" }, 1000).parent().find("input:button").click(function(){
+			$('<div><input type="text" /><input class="save" type="button" value="save" id="save"></div>').hide().appendTo($(this).parent()).show("slide", { direction: "left" }, 1000).parent().find("input:button").click(function(){
+
 				var currentDiv = $(this).parent();
-				if(currentDiv.find("input:text").val() !=''){
+				if(currentDiv.find("input:text").val() !='')
+				{
 					var inputValue = currentDiv.find("input:text").val();
-					/*First letter uppercase.	
-					inputValue = inputValue.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-    						return letter.toUpperCase();
-							});	
-					*/ 	
-						var selectionId = "#"+$(this).parent().parent().find("select").attr('id');	
+					var selectionId = "#"+$(this).parent().parent().find("select").attr('id');	
 					$(selectionId).append(new Option(inputValue, inputValue.toLowerCase(), true, true));
 				
-				var button = $(this).parent().parent().find('input:first');	
-				$(this).parent().remove();
-				button.val("+");		
+					var button = $(this).parent().parent().find('input:first');	
+					$(this).parent().remove();
+					button.val("+");	
+					
+					$.ajax
+					({
+	  				type: "GET",
+	  				url: "./campagin/inserting",
+	  				cache: false,
+	  				data: "type="+data+"&value="+currentDiv.find("input:text").val(),
+	  				beforeSend: function(){
+							alert(3);},
+	  				success: function(asdf)	{},
+	  				complete: function(){
+							$('#campaign .saving').fadeOut(1000,function(){$(this).remove();});}	
+					});
 				}
 			});
 			}
+			
+			
 		});
 	});
-	
 
 
 	//MainMenu
@@ -222,7 +228,6 @@ for(var key in campaignData){
 							
 					success: function(data){
 						alert(data);
-						
 					},
 					
 					complete: function(){
@@ -276,6 +281,9 @@ $("#templateAvaliable,#templateSelected").sortable({
         	success: function(respond){
         		alert(respond);
         		sending.close();
+        	},
+        	
+        	complete: function(){
         	}
         });
 
