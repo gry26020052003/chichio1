@@ -187,6 +187,13 @@ for(var key in campaignData){
 		connectWith: ".IpConnect",
 	}).disableSelection();
 	
+	function listSelection(id){
+ 	 	var selection = [];	
+ 	 	$("#"+id+" li").each(function(){ 
+ 			selection.push($(this).attr("id"));
+ 		});
+ 		return selection;
+	}
 	
 	//When .save button clicked   Domain, IP, 
 	$(".saveSelection").click(function(){
@@ -194,10 +201,7 @@ for(var key in campaignData){
 			
 		$(this).parents("table").find(".selection").each(function(){
 			var selectionId = $(this).attr('id');
-			var selection = [];			
-			$("#"+selectionId+" li").each(function(){
-				selection.push($(this).attr('id'));
-			});
+			var selection = listSelection(selectionId);
 			
 					$.ajax({
 						type: "GET",
@@ -241,6 +245,43 @@ $("#templateAvaliable,#templateSelected").sortable({
 	revert:	true,
 }).disableSelection();
 	
+
+
+//******Test&Send Management *******//
+$("#templateAvaliable,#templateSelected").sortable({
+	connectWith:	".templateConnect", 
+	revert:	true,
+}).disableSelection();
+	
+
+	
+ $('#testVolume,#sendList,#setBulk').submit(function(e) {
+ 	var buttonValue = $(this).find("input:submit").attr("name");
+ 	var selectedTemplate = listSelection("templateSelected")
+  var ajaxData = $(this).closest('form').serialize();
+	ajaxData = ajaxData.concat("&selectedTemplate=",selectedTemplate);  //add selected tempaltes
+	ajaxData = ajaxData.concat("&submit=",buttonValue);  //add submit button value
+ 	
+ 	//alert(buttonValue);
+ 	  var sending = window.open("save.php?"+ajaxData, 'stayOnCurrentPage', 'width=700,height=400,resizeable,scrollbars');
+      this.target = 'stayOnCurrentPage';
+
+        $.ajax({
+        	type:"POST",
+        	url:"save.php",
+        	data: ajaxData,
+        	beforeSend: function(){
+        		
+        	},
+        	success: function(respond){
+        		alert(respond);
+        		sending.close();
+        	}
+        });
+
+      	 e.preventDefault();
+        return false;
+    });
 
 
 
