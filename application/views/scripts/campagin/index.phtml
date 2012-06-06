@@ -18,7 +18,7 @@
 				<input class="button" type="button" value="deployment"/>
 		</div>
 		<div id="mainMenuLogo">
-			<img src="./images/mainMenu.jpg" alt="mainmenu"/>
+			<img src="<?php echo realpath; ?>img/mainMenu.jpg" alt="mainmenu"/>
 		</div>
 	</div>
 	<div id="mainMenuTabNav">
@@ -230,7 +230,7 @@ Content-Transfer-Encoding: 8bit
 	</form>
     </div>
     
-    <div id="test_send">
+<div id="test_send">
       
 						
 								<select>
@@ -245,75 +245,104 @@ Content-Transfer-Encoding: 8bit
 								<td>
 										<label>Avaliable Templates</label>
 									<ul id="templateAvaliable" class="sortable templateConnect">
-									<li class="ui-state-default" id="a">Template1</li>
-									<li class="ui-state-default" id="b">Template2</li>
-									<li class="ui-state-default" id="c">Template3</li>
-                  <li class="ui-state-default" id="d">Template4</li>
-									<li class="ui-state-default" id="e">Template5</li>
-									<li class="ui-state-default" id="f">Template6</li>
+									<li class="ui-state-default" id="1">Template1</li>
+									<li class="ui-state-default" id="2">Template2</li>
+									<li class="ui-state-default" id="3">Template3</li>
+                 	<li class="ui-state-default" id="4">Template4</li>
+									<li class="ui-state-default" id="5">Template5</li>
+									<li class="ui-state-default" id="6">Template6</li>
 									</ul>		
 								</td>
 								
 								<td>
 									<label>Selected Templates</label>
 									<ul id="templateSelected" class="sortable templateConnect">
-											<li class="ui-state-default" id="a">Template1</li>
+											<li class="ui-state-default" id="7">Template7</li>
 									</ul>
 								</td>
 							
 							<td>								
 									<fieldset>
 										<legend>Volume Test</legend>
-											<form>
+											<form id="testVolume">
 												<table>
-													<tr>
-														
-														<td>
-															<input type="text" class="clear" value="seed account" /
-														</td>
-														<td>
-															<input type="submit" name="test1" value="Test" />
-														</td>
-													</tr>
+														<?php	for($i=1;$i<=5;$i++){?>
+																<tr><td>
+																<input type="text" class="clear" value="enter 1st seed email here" />
+																</td>
+																<td> x </td>
+																<td>
+																<input type="text" class="clear" name="volume<?php echo $i;?>" value="Volume" />
+																</td></tr>
+														<?php } ?> 
+																<tr>
+																	<td colspan="2"></td>
+																	<td>
+																		<input type="submit" value="Send Volume Test" name="templateVolumeTest">
+																	</td>
+																</tr>
+																
 												</table>
 											</form>			
 									</fieldset>
 								</td>
-							
+								</tr>
+								
+							<tr><td></td><td></td>
 							<td>
+								
 								<fieldset>
-									<legend>
-										Send
-									</legend>
+									<legend>Send</legend>
+										<form id="sendList" action="save.php">
+										<table>
+											<tr>
+												<td>
+												<select name="productionList">
+													<option value="yahoo">Yahoo-2-12-(563215325)</option>
+													<option value="Gmail">Gmail-2-12-(563215325)</option>
+													<option value="AOL">Aol-2-12-(563215325)</option>
+												</select>
+												</td>
+												<td><input name="seedInterval" type="input" class="clear" value="seed interval"/>
+												<td><input name="seedAccount" type="input" class="clear" value="seed Account"/>
+												</td>
+												<tr>
+																	<td colspan="2"></td>
+																	<td>
+																		<input type="submit" value="Send Volume Test" name="templateVolumeTest"
+																	</td>
+																</tr>
+											</tr>	
+										</table>
+									</form>	
 								</fieldset>
+								
 							</td>									
-							</tr>	
+							</tr>
+							<tr><td colspan="2"></td>
+							<td>
+								
+								<fieldset>
+									<legend>Bulk Setup</legend>
+									<form id="setBulk">
+									<table>
+										<tr>
+											<td><input class="clear" type="text" name="bulkCampaignId" value="Campaign ID"/></td>
+											<td><input type="submit" name="setBulk" value="Set Bulk"/></td>
+										</tr>
+									</table>
+							
+								</fieldset>
+							</td></tr>	
+							<form>
 						</table>
 					</fieldset>
+						
 									
-				<div id="volumeTest">
-					<table>
-						<tr>
-							<label>Volume Test</label>
-						</tr>	
-						
-						
-						
-						
-					</table>
-				</div>
+			  	
         	
-        	<input class="clear" type="text" value="enter 1st seed email here"/> x <input class="clear" type="text" value="Volume"/>
-            <input type="button" value="Send Volume Test"/>       
-   		 <div id="sendTemplate">
-         <select>
-	                    <option value="yahoo">Yahoo-2-12-(563215325)"</option>
-                    	<option value="Gmail">Gmail-2-12-(563215325)</option>
-                       	<option value="AOL">Aol-2-12-(563215325)</option>
-                    </select>
-                 <input type="button" value="Send Production List"/>    
-         </div>
 </div>
+
 </div><!--end of deployment-->    
 </div><!--end of main menu tab nav-->
 </div>
