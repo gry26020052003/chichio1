@@ -39,7 +39,7 @@ foreach($this->create as $value)
 }
 
 echo '<form style="margin-left:100px;"  method="post" action="'.realpath.'campagin/updating?action=addlink&cid='.$value["campagin_id"].'"">
-						<input type="hidden" name="campagin_id" value="'.$value["id"].'" />  <br />
+						<input type="hidden" name="campagin_id" value="'.$this->data[0]["id"].'" />  <br />
 						<input type="text" name="name" /><input type="submit" value="Add Creative" />
 					</form>';
 

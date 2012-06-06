@@ -1,0 +1,205 @@
+/*************General Styling*****************/
+#container{
+	background-color:#666;
+	padding:6px;
+	margin-left:30px;
+	overflow:auto;
+	}
+
+legend{
+	color:#262677;
+}
+
+/**** Deployment ****/
+#domainManagement,#templateManagement, #test_send{
+background-color:#CCC;
+padding:5px 5px 15px 5px;
+}
+
+.inactive{color: #666666;} 
+ 
+#mainMenuTabNav{position: relative;}
+
+body{background-color:silver;}
+	
+#tabNav {
+	list-style-type:none;
+	display:inline;
+	margin:0;
+	padding:0;
+	left:0;
+	top:0;
+	}	
+		
+#tabNav li{
+	list-style-type:none;
+	display:inline;
+	background-color:#999;
+	padding:1px 13px;
+	border: 1px solid black;
+	border-radius: 5px;
+
+	}
+
+#tabNav li.current{
+	background-color:#CCC;
+	border-bottom: 0;
+	font-weight:bold;
+	}
+	
+#tabNav li a{
+	text-decoration:none;
+}
+
+#tabNav li a:link,a:visited{
+	color:black;}
+
+select option{ 
+  background-color: #E0E0D1; 
+} 
+
+
+/**********Campaign Management*******/
+#campaign{height:450px;}
+
+.saving{width:100%;height:100%;opacity: 0.60;position: absolute;background-color:black;}
+
+#campaign > div{
+	float:left;
+}
+
+
+
+
+#campaign table{
+	border:1px solid black;
+	background-color:#C2C2A3;
+}
+
+#campaign table td{padding-right:10px;}
+
+#campaign table label{
+	float:right;
+}
+
+#campaign table select{
+	width:150px;
+}
+
+#campaign table .options input{
+	width:55px;
+}
+
+#listCreatives{
+	margin-left:15px;
+	padding:0 15px 5px 15px;
+	width:400px;
+	height:400px;
+	overflow:auto;
+	background-color:#CCCCB2;
+}
+
+/**********Domain Management*******/
+#domain, #ip{width:400px; padding-left:5px;}
+#domain table,#ip table,#test_send table{margin:5px 5px 10px 5px;}
+
+.sortable{
+	list-style-type: none;
+	border:1px solid black;
+	width:100px;
+	height:100px;
+	overflow:auto;
+	margin:0;
+	padding:2px;
+	margin-right:20px;
+	background: #eee;
+	overflow-x: hidden;
+}
+
+.sortable li{ 
+	cursor:move; 
+	margin: 5px; 
+	padding: 2px; 
+	font-size: 13px; 
+	width: 70px;  
+	background-color: white;
+}
+
+
+
+/**********Template Management**************/
+textarea{width:99%; height:300px;}	
+
+/***********Test&Send Management************/
+
+
+
+/***********end Test&Send Management**********/
+
+
+
+
+#mainMenuContainer{
+position:fixed;
+top:55px;
+float:left;
+z-index: 99;
+opacity: 0.80;
+
+}
+
+
+#mainMenu,#mainMenuLogo{
+	float:left;
+	}
+
+#mainMenuLogo{margin-top:15px;}
+
+#mainMenu input{
+	width:100px;
+}
+
+
+#mainMenu{background-color:#5C7893;width:100px;height:155px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-khtml-border-radius: 5px;
+		border-radius: 5px;
+		-moz-box-shadow: 10px 10px 5px #888888;
+		box-shadow: 10px 10px 5px #888888;
+}
+
+
+/*css3 button*/
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+

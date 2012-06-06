@@ -86,9 +86,5 @@ class CampaginController extends Zend_Controller_Action
 		
 		$create_data = $this->create->displaybyID($_GET['cid']);
 		$this->view->create = $create_data;
-
-				
-
-
 	}
 }
