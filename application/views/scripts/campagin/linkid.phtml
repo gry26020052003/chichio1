@@ -1,0 +1,14 @@
+<?php
+	foreach($this->data as $value)
+	{
+		echo $value["link_name"];
+		echo "<br />";
+	}
+?>
+<form method="post" action="<?php echo realpath?>campagin/linkid">
+	<input type="text" placeholder="redirect" name="link_name[]"/>
+	<input type="text" placeholder="redirect" name="link_name[]"/>
+	<input type="hidden" value="<?php echo $this->creativeID; ?>" name="creativeID" />
+	<input type="submit" />
+</form>
+

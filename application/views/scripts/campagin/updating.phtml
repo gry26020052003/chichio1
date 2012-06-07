@@ -35,7 +35,7 @@ echo '</table>';
 
 foreach($this->create as $value)
 {
-	echo '<br /><a style="margin-left:100px;" href="" />'.$value["name"].'</a> <br />';
+	echo '<br /><a style="margin-left:100px;" href="'.realpath.'campagin/linkid?creativeID='.$value["id"].'" />'.$value["name"].'</a> <br />';
 }
 
 echo '<form style="margin-left:100px;"  method="post" action="'.realpath.'campagin/updating?action=addlink&cid='.$value["campagin_id"].'"">

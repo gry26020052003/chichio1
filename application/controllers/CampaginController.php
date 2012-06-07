@@ -4,12 +4,14 @@ class CampaginController extends Zend_Controller_Action
 	private $create;
 	private $data;
 	private $campaign;
+	private $link;
 	
 	public function init()
 	{
 		$this->data = new Default_Model_Data();
 		$this->campaign = new Default_Model_Campaign();
 		$this->create = new Default_Model_Creative();
+		$this->link = new Default_Model_Link();
 		//$this->create = new Default_Model_Create();
 	}
 	
@@ -61,6 +63,37 @@ class CampaginController extends Zend_Controller_Action
 	{
 		$this->_helper->layout->disableLayout();
 		$rows = $this->create->inserting($_POST);
+	}
+	
+	public function linkidAction()
+	{
+		if($this->getRequest()->isGET())
+			if(isset($_GET["creativeID"]))
+			{
+				$this->view->creativeID = $_GET['creativeID'];
+				$data = $this->link->displayByID($_GET["creativeID"]);
+				$this->view->data = $data;
+			}
+			
+		if($this->getRequest()->isPOST())
+		{
+			$data = array();
+			$data["creativeID"] = $_POST["creativeID"];
+			if(!empty($_POST["link_name"][0]))
+			{
+				$data["link_name"] = $_POST["link_name"][0];
+				$this->link->inserting($data);
+			}
+			if(!empty($_POST["link_name"][1]))
+			{
+				$data["link_name"] = $_POST["link_name"][1];
+				$this->link->inserting($data);
+			}
+			
+			
+			print_r($data);
+			
+		}
 	}
 	
 	public function updatingAction()
