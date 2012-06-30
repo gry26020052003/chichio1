@@ -20,4 +20,10 @@ class Default_Model_Link extends Zend_Db_Table_Abstract
 		$data = $this->fetchAll($this->select()->where('creativeID = ?', $id))->toArray();
 		return $data;
 	}
+	
+	public function extractID($id)
+	{
+		$data = $this->fetchAll($this->select()->where('id = ?', $id))->toArray();
+		return $data;
+	}
 }

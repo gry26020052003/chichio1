@@ -56,6 +56,8 @@ class CampaginController extends Zend_Controller_Action
 	
 	public function getAction()
 	{
+		$data = $this->link->extractID($_GET["id"]);
+		$this->view->data = $data;
 	}
 	
 	
@@ -119,5 +121,17 @@ class CampaginController extends Zend_Controller_Action
 		
 		$create_data = $this->create->displaybyID($_GET['cid']);
 		$this->view->create = $create_data;
+	}
+
+	public function bestbuyAction(){
+		
+	}
+	
+	public function macysAction(){
+		
+	}
+	
+	public function targetAction(){
+	
 	}
 }

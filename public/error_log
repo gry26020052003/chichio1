@@ -33,3 +33,34 @@
 [03-Jun-2012 21:19:45] PHP Warning:  Invalid argument supplied for foreach() in /home7/chichio1/public_html/chichi-tian/application/views/scripts/campagin/updating.phtml on line 51
 [05-Jun-2012 19:57:00] PHP Fatal error:  Cannot use [] for reading in /home7/chichio1/public_html/chichi-tian/application/views/scripts/campagin/updating.phtml on line 41
 [05-Jun-2012 22:46:59] PHP Warning:  Invalid argument supplied for foreach() in /home7/chichio1/public_html/chichi-tian/application/views/scripts/campagin/get.phtml on line 111
+[12-Jun-2012 16:09:51] PHP Warning:  Invalid argument supplied for foreach() in /home7/chichio1/public_html/chichi-mike/application/views/scripts/campagin/linkid.phtml on line 2
+[12-Jun-2012 16:11:46] PHP Warning:  Invalid argument supplied for foreach() in /home7/chichio1/public_html/chichi-mike/application/views/scripts/campagin/linkid.phtml on line 2
+[12-Jun-2012 16:11:52] PHP Warning:  Invalid argument supplied for foreach() in /home7/chichio1/public_html/chichi-mike/application/views/scripts/campagin/linkid.phtml on line 2
+[12-Jun-2012 16:12:02] PHP Warning:  Invalid argument supplied for foreach() in /home7/chichio1/public_html/chichi-mike/application/views/scripts/campagin/linkid.phtml on line 2
+[12-Jun-2012 16:12:05] PHP Warning:  Invalid argument supplied for foreach() in /home7/chichio1/public_html/chichi-mike/application/views/scripts/campagin/linkid.phtml on line 2
+[12-Jun-2012 16:46:10] PHP Catchable fatal error:  Object of class Zend_Controller_Request_Http could not be converted to string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 6
+[12-Jun-2012 16:46:26] PHP Catchable fatal error:  Object of class Zend_Controller_Request_Http could not be converted to string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 6
+[12-Jun-2012 17:07:25] PHP Fatal error:  Call to a member function getRequset() on a non-object in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:09:45] PHP Fatal error:  Call to undefined function  getcontrollername() in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:09:57] PHP Fatal error:  Call to undefined function  getcontrollername() in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:10:15] PHP Fatal error:  Call to undefined function  getcontrollername() in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:11:58] PHP Fatal error:  Call to undefined function  getparam() in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:12:07] PHP Fatal error:  Call to undefined function  getparam() in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:20:04] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:20:33] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:21:20] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:22:11] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:22:12] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:22:16] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:22:19] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:22:29] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:22:33] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:22:36] PHP Fatal error:  Function name must be a string in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 17:51:05] PHP Parse error:  syntax error, unexpected '[', expecting ',' or ';' in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 18:03:48] PHP Fatal error:  Call to undefined function  url() in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 18:04:07] PHP Fatal error:  Call to undefined function  url() in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 18:08:40] PHP Parse error:  syntax error, unexpected '=' in /home7/chichio1/public_html/chichi-mike/application/controllers/AdsController.php on line 5
+[12-Jun-2012 18:26:30] PHP Parse error:  syntax error, unexpected '<' in /home7/chichio1/public_html/chichi-mike/application/views/scripts/ads/target.phtml on line 10
+[12-Jun-2012 18:26:44] PHP Catchable fatal error:  Object of class Zend_View could not be converted to string in /home7/chichio1/public_html/chichi-mike/application/views/scripts/ads/target.phtml on line 8
+[12-Jun-2012 18:33:09] PHP Warning:  Invalid argument supplied for foreach() in /home7/chichio1/public_html/chichi-mike/application/views/scripts/campagin/linkid.phtml on line 9
+[12-Jun-2012 18:43:20] PHP Warning:  Invalid argument supplied for foreach() in /home7/chichio1/public_html/chichi-mike/application/views/scripts/campagin/get.phtml on line 111

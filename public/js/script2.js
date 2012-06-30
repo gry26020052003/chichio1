@@ -125,9 +125,13 @@ for(var key in campaignData){
 	  				url: "./campagin/inserting",
 	  				cache: false,
 	  				data: "type="+data+"&value="+currentDiv.find("input:text").val(),
-	  				beforeSend: function(){
-							alert(3);},
-	  				success: function(asdf)	{},
+	  				beforeSend: function(){},
+	  				success: function(asdf)	{alert("success");},
+    error:function (xhr, ajaxOptions, thrownError){
+        alert(xhr.status);
+        alert(xhr.statusText);
+        alert(xhr.responseText);
+	  					},
 	  				complete: function(){
 							$('#campaign .saving').fadeOut(1000,function(){$(this).remove();});}	
 					});
