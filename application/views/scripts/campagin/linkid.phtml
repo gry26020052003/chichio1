@@ -11,18 +11,22 @@ foreach($this->data as $value)
 	echo '<tr>';
 	echo '<td>'.$value["id"].'</td>';
 	echo '<td><img src ="http://chichionline.net/chichi-mike/public/campagin/get?id='.$value["id"].'" width="150" height="150"/></td>';
-	echo '<td></td>';
+	echo '<td>'.$value["type"].'</td>';
 	echo '<td>Click URL: '.$value["link_name"].'<br /> Image URL:'.$value["Click_URL"].'</td>';
 	echo "</tr>";
 }
 echo '</table>';
 ?>
 
-<!--
-<form method="post" action="<?php echo realpath?>campagin/linkid">
-	<input type="text" placeholder="redirect" name="link_name[]"/>
-	<input type="text" placeholder="redirect" name="link_name[]"/>
+<form method="post" action="<?php echo realpath?>campagin/linkid" enctype="multipart/form-data">
+	<br />
+	<input type="text" placeholder="redirect" name="link_name"/>
+	<br />
+	<input type="file" name="linkfile" />
+	<br />
+	<input type="text" name="type" placeholder="type" />
+	<br />
 	<input type="hidden" value="<?php echo $this->creativeID; ?>" name="creativeID" />
+	<br />
 	<input type="submit" />
 </form>
--->

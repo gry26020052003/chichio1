@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>E-Mailing</title>
-
 <link rel="stylesheet" href="<?php echo realpath; ?>/css/style2.css" type="text/css" media="screen" charset="utf-8"/>
 <script src="<?php echo realpath;?>/js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo realpath; ?>/js/script2.js"></script>
@@ -78,9 +77,8 @@
 												echo '<option value="'.$value["value"].'">'.$value["value"].'</option>';										
 								?>
 							</select></td>
-					</tr>
-		
-				<tr class="options">
+					</tr>		
+					<tr class="options">
 					<td><label>Cluster</label></td>
 					<td><select id="cluster" name="cluster">
 						<option>Choose A Cluster</option>
@@ -293,7 +291,7 @@ Content-Transfer-Encoding: 8bit
 								
 								<fieldset>
 									<legend>Send</legend>
-										<form id="sendList" action="save.php">
+										<form id="sendList" action="<?php echo APPLICATION_PATH; ?>/others/email.php" method="POST">
 										<table>
 											<tr>
 												<td>
@@ -309,7 +307,7 @@ Content-Transfer-Encoding: 8bit
 												<tr>
 																	<td colspan="2"></td>
 																	<td>
-																		<input type="submit" value="Send Volume Test" name="templateVolumeTest"
+																		<input type="submit" value="Send Volume Test" name="templateVolumeTest" />
 																	</td>
 																</tr>
 											</tr>	
@@ -324,7 +322,7 @@ Content-Transfer-Encoding: 8bit
 								
 								<fieldset>
 									<legend>Bulk Setup</legend>
-									<form id="setBulk">
+								<form id="sendBulk" action="<?php echo realpath ?>campagin/send" method="POST">
 									<table>
 										<tr>
 											<td><input class="clear" type="text" name="bulkCampaignId" value="Campaign ID"/></td>

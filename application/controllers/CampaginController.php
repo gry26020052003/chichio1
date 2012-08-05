@@ -5,6 +5,8 @@ class CampaginController extends Zend_Controller_Action
 	private $data;
 	private $campaign;
 	private $link;
+	private $email;
+	private $track;
 	
 	public function init()
 	{
@@ -12,6 +14,8 @@ class CampaginController extends Zend_Controller_Action
 		$this->campaign = new Default_Model_Campaign();
 		$this->create = new Default_Model_Creative();
 		$this->link = new Default_Model_Link();
+		$this->email = new Default_Model_Email();
+		$this->track = new Default_Model_Track();
 		//$this->create = new Default_Model_Create();
 	}
 	
@@ -60,6 +64,15 @@ class CampaginController extends Zend_Controller_Action
 		$this->view->data = $data;
 	}
 	
+	public function trackAction()
+	{
+		if($_GET['type'] == "open")
+		{
+			$data["type"] = "open";
+			$this->track->inserting($data);
+		}
+	}
+	
 	
 	public function createAction()
 	{
@@ -81,21 +94,21 @@ class CampaginController extends Zend_Controller_Action
 		{
 			$data = array();
 			$data["creativeID"] = $_POST["creativeID"];
-			if(!empty($_POST["link_name"][0]))
-			{
-				$data["link_name"] = $_POST["link_name"][0];
-				$this->link->inserting($data);
-			}
-			if(!empty($_POST["link_name"][1]))
-			{
-				$data["link_name"] = $_POST["link_name"][1];
-				$this->link->inserting($data);
-			}
-			
-			
-			print_r($data);
-			
+			$data["type"] = $_POST["type"];
+			$data["link_name"] = $_POST['link_name'];
+			$tmpName  = $_FILES['linkfile']['tmp_name'];  
+			$image = file_get_contents($tmpName);
+			$data["picture"] = $image;
+			$this->link->inserting($data);
 		}
+	}
+	
+	public function displaylinkAction()
+	{
+		$id = $_GET["link_image_id"];
+		$data = $this->link->extractID($id);
+		header('Content-Type: image/jpeg');
+		echo $data[0]["picture"];
 	}
 	
 	public function updatingAction()
@@ -121,6 +134,11 @@ class CampaginController extends Zend_Controller_Action
 		
 		$create_data = $this->create->displaybyID($_GET['cid']);
 		$this->view->create = $create_data;
+	}
+	
+	public function sendAction()
+	{
+		$this->email->send();
 	}
 
 	public function bestbuyAction(){
