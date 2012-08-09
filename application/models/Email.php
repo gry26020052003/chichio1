@@ -11,34 +11,29 @@ class Default_Model_Email
 												AND linkid.creativeID = 62'); 
 												
 		$to = 'nobody@example.com';
-		$subject = 'the subject';
+		$subject = 'If you are suffering from side effects because of a pelvic mesh implant, file your claim today!';
 		$message = '
-		<html>
-			<head>
-  			<title>Birthday Reminders for August</title>
-					</head>
-<body>
-  <p>Here are the birthdays upcoming in August!</p>
-  <table>';
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>FreeCreditClick </title>
+<body bgcolor="#ffffff" text="#000000">
+<center>';
 	
 		while ($row = $stmt->fetch()) 
 		{
    	 	 	$message .= '<tr>
-      					<td>Sally</td><td><a href="'.$row["link_name"].'?creativeID=56&linkid=&'.$row["linkid"].'">
+      					<td>Sally</td><td><a href="'.$row["link_name"].'?creativeID=62&linkid=&'.$row["linkid"].'">
       					<img src="http://chichionline.net/chichi-tian/public/campagin/displaylink?link_image_id='.$row["linkid"].'"> </img> </td>
    					 </tr>';
 		}
   	$message .= '</table>
-  <img src="http://kencai.bugs3.com/score.php" style="display:none"> </img>
 </body>
 </html>
 ';
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$headers .= 'To: Mary <mary@example.com>, Kelly <kelly@example.com>' . "\r\n";
-$headers .= 'From: Birthday Reminder <birthday@example.com>' . "\r\n";
-$headers .= 'Cc: birthdayarchive@example.com' . "\r\n";
-$headers .= 'Bcc: birthdaycheck@example.com' . "\r\n";		
+$headers .= 'Content-Transfer-Encoding: base64' . "\r\n";
+$headers .= 'From: MeshPatchRecallCenter <birthday@example.com>' . "\r\n";		
 mail('kencai166@gmail.com', $subject, $message, $headers);
 mail('gry2600@gmail.com', $subject, $message, $headers);
 		
