@@ -265,9 +265,10 @@ $("#templateAvaliable,#templateSelected").sortable({
 
 	
  $('#testVolume,#sendList,#setBulk').submit(function(e) {
+ 	
  	var buttonValue = $(this).find("input:submit").attr("name");
  	var selectedTemplate = listSelection("templateSelected")
-  var ajaxData = $(this).closest('form').serialize();
+  	var ajaxData = $(this).closest('form').serialize();
 	ajaxData = ajaxData.concat("&selectedTemplate=",selectedTemplate);  //add selected tempaltes
 	ajaxData = ajaxData.concat("&submit=",buttonValue);  //add submit button value
  	

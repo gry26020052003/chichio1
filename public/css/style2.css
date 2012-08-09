@@ -129,11 +129,11 @@ select option{
 
 /**********Template Management**************/
 textarea{width:99%; height:300px;}	
+/***********Template Management**********/
+
 
 /***********Test&Send Management************/
-
-
-
+#testVolume input{width:150px;margin: 4px 15px;padding:0 20px;}
 /***********end Test&Send Management**********/
 
 
