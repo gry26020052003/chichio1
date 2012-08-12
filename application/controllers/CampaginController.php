@@ -15,6 +15,39 @@ class CampaginController extends Zend_Controller_Action
 		//$this->create = new Default_Model_Create();
 	}
 	
+	public function templatesAction()
+	{
+		$templates = array(
+		"1234" => array("1234-a","1234-b","1234-c","1234-d","1234-e","1234-f"),
+		"2234" => array('2234-1','2234-2','2234-3','2234-4'),
+		'0'		 => array('testRedirect','testDomain','testIp','regularTest')
+		);
+	
+		echo  json_encode($templates);
+	}
+	
+	public function loadtemplateAction()
+	{
+		$folder = 'templates/'.$_POST["creativeId"].'/';
+		$templateName = $_POST["templateName"].'.tpl';
+		echo  file_get_contents($folder.$templateName	);
+	}
+	
+	public function savetemplateAction()
+	{	
+			$folder = 'templates/'.$_POST["creativeId"].'/';
+			$templateName = $_POST["templateName"].'.tpl';
+			$content = $_POST["templateContent"];
+			
+			if(!file_exists($folder)){
+					mkdir($folder,0777);
+					//echo 'successing created '.$_POST["creativeId"];
+			}
+			$file = fopen($folder.$templateName,"w+");
+			fputs($file,$content);
+			fclose($file);
+	}
+	
 	public function indexAction()
 	{
 		$data = $this->data->display();
