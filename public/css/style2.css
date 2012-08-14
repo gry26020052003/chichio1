@@ -10,6 +10,8 @@ legend{
 	color:#262677;
 }
 
+li{list-style: none;}
+
 /**** Deployment ****/
 #domainManagement,#templateManagement, #test_send{
 background-color:#CCC;
@@ -129,8 +131,25 @@ select option{
 
 /**********Template Management**************/
 textarea{width:99%; height:300px;}	
-/***********Template Management**********/
 
+#creativeParent{position:relative;}
+
+.subMenu{
+	margin:0;
+	padding:0;
+	position: absolute;
+	width:120px;
+	background-color:#F5F5F5;
+}
+
+.subMenuOptions:hover{
+	background-color:#C2DFFF;
+	cursor:pointer;
+}
+
+ul{margin:0;padding:0;}
+
+#templateContent{width:60%;max-width:90%;}
 
 /***********Test&Send Management************/
 #testVolume input{width:150px;margin: 4px 15px;padding:0 20px;}
