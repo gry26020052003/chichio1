@@ -107,7 +107,8 @@ class CampaginController extends Zend_Controller_Action
 	{
 		$id = $_GET["link_image_id"];
 		$info["type"] = "click";
-		$info["linkID"] = "";
+		$info["linkID"] = $id;
+		$this->track->inserting($info);
 		$data = $this->link->extractID($id);
 		header('Content-Type: image/jpeg');
 		echo $data[0]["picture"];
